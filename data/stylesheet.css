@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+:root {
+    --mobile-card-width: calc(50% - 10px);
+}
+
 * {
     font-family: "Roboto", sans-serif !important;
 }
@@ -13,8 +17,8 @@ body {
     background-attachment: fixed;
     display: flex;
     justify-content: center;
-    align-items: center; 
-    min-height: 100vh; 
+    align-items: center;
+    min-height: 100vh;
 }
 
 .container {
@@ -23,11 +27,11 @@ body {
 
 .dropdown-container {
     display: flex;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     justify-content: space-between;
     gap: 10px;
     margin-bottom: 10px;
-    width: 100%; 
+    width: 100%;
 }
 
 select {
@@ -40,7 +44,7 @@ select {
 }
 
 button {
-    flex-shrink: 0; 
+    flex-shrink: 0;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
@@ -48,34 +52,20 @@ button {
     font-size: 16px;
 }
 
-@media (max-width: 768px) {
-    .dropdown-container {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    select {
-        max-width: 100%; 
-    }
-
-    button {
-        max-width: 100%; 
-    }
-}
-
 .large-card {
-    margin-bottom: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
     padding: 0;
     text-align: center;
     border-radius: 5px;
     background-color: none;
     border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 
 .large-card img {
-    width: 50%;
+    width: 100%;
     height: auto;
     max-height: 200px;
     object-fit: contain;
@@ -84,7 +74,9 @@ button {
 
 .replace-btn {
     margin-top: 5px;
+    margin-bottom: 10px;
     border-radius: 5px;
+    width: 100%;
 }
 
 .disabled-btn {
@@ -103,23 +95,17 @@ button {
 .card-item {
     margin-bottom: 10px;
     padding: 0;
-    width: calc(16.66% - 10px);
+    width: var(--mobile-card-width);
     height: auto;
-    object-fit: cover; 
+    object-fit: cover;
     text-align: center;
     background-color: none;
     border: none;
 }
 
-@media (max-width: 768px) {
-    .card-item {
-        width: calc(33.33% - 10px);
-    }
-}
-
 @media (min-width: 769px) {
     .card-item {
-        width: calc(16.66% - 10px); 
+        width: calc(16.66% - 10px);
     }
 }
 
@@ -152,7 +138,6 @@ button {
     padding-top: 10px;
     padding-left: 10px;
     padding-right: 10px;
-    margin-bottom: 10px;
     border-radius: 10px;
 }
 
@@ -162,14 +147,14 @@ button {
 
 .button-container {
     display: flex;
-    flex-direction: row; 
+    flex-direction: row;
     gap: 10px;
     margin-top: 20px;
-    width: 100%; 
+    width: 100%;
 }
 
 .button-container .btn {
-    flex: 1; 
+    flex: 1;
     padding: 10px;
     border-radius: 5px;
     font-size: 16px;
@@ -187,6 +172,7 @@ button {
 }
 
 .card-description {
+    flex-grow: 1;
     margin: 10px 0;
     font-size: 12px;
     color: #fff;
@@ -194,4 +180,10 @@ button {
 
 .card-description span {
     font-weight: bold;
+}
+
+.footer {
+    margin-top: 10px !important;
+    text-align: center !important;
+    color: #fff;
 }
