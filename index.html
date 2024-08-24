@@ -4,15 +4,15 @@
 <head>
     <!-- HTML Meta Tags -->
     <meta charset="UTF-8">
-    <title>MarvelSnap - Deck Drafter</title>
+    <title>MarvelSnap: Deck Drafter</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Generate Draft Decks for Friendly Battles!">
-    <link rel="icon" href="https://j9b1.github.io/snapdraft/data/img/favicon.png" type="image/x-icon">
+    <link rel="icon" href="https://github.com/J9B1/snapdraft/blob/main/data/img/favicon.png" type="image/x-icon">
 
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content="https://j9b1.github.io/snapdraft/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="MarvelSnap - Deck Drafter">
+    <meta property="og:title" content="MarvelSnap: Deck Drafter">
     <meta property="og:description" content="Generate Draft Decks for Friendly Battles!">
     <meta property="og:image" content="https://raw.githubusercontent.com/J9B1/snapdraft/main/data/img/preview.png">
 
@@ -20,7 +20,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta property="twitter:domain" content="j9b1.github.io">
     <meta property="twitter:url" content="https://j9b1.github.io/snapdraft/">
-    <meta name="twitter:title" content="MarvelSnap - Deck Drafter">
+    <meta name="twitter:title" content="MarvelSnap: Deck Drafter">
     <meta name="twitter:description" content="Generate Draft Decks for Friendly Battles!">
     <meta name="twitter:image" content="https://raw.githubusercontent.com/J9B1/snapdraft/main/data/img/preview.png">
 
@@ -121,7 +121,7 @@
 
                 <!-- DECK CODE -->
                 <div id="deck-actions" class="hidden">
-                    <input type="text" id="deck-name" placeholder="Enter deck name" class="form-control mb-2">
+                    <input type="text" id="deck-name" readonly placeholder="Enter deck name" class="form-control mb-2">
                     <div class="button-container">
                         <button class="btn btn-success" onclick="copyDeck()"><i class="bi bi-copy"></i>
                             Copy Deck</button>
@@ -134,9 +134,11 @@
         </div>
 
         <div class="row footer">
-            <p>Source Code is available on <a href="https://github.com/J9B1/snapdraft" target="_blank">Github <i class="bi bi-github"></i></a></p>
+            <p>Created by J9B1 | Source Code is available on <a href="https://github.com/J9B1/snapdraft" target="_blank">Github <i class="bi bi-github"></i></a></p>
         </div>
     </div>
+
+    <div id="toast" class="toast hidden">Copied to clipboard!</div>
 </body>
 
 </html>

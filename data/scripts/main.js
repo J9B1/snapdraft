@@ -92,11 +92,11 @@ $(document).ready(function () {
             $('#card1-art').attr('src', displayedCards[0].art);
             $('#card2-art').attr('src', displayedCards[1].art);
             $('#card3-art').attr('src', displayedCards[2].art);
-    
+
             $('#card1-desc').html(displayedCards[0].ability || displayedCards[0].flavor);
             $('#card2-desc').html(displayedCards[1].ability || displayedCards[1].flavor);
             $('#card3-desc').html(displayedCards[2].ability || displayedCards[2].flavor);
-    
+
             $('#replace-btn1').prop('disabled', false);
             $('#replace-btn2').prop('disabled', false);
             $('#replace-btn3').prop('disabled', false);
@@ -234,8 +234,13 @@ $(document).ready(function () {
 
     window.copyDeck = function () {
         let deckInput = document.getElementById('deck-name');
+
         deckInput.select();
-        document.execCommand('copy');
+        navigator.clipboard.writeText(deckInput.value).then(() => {
+            showToast('Copied to clipboard!');
+        }).catch(err => {
+            console.error('Failed to copy: ', err);
+        });
     };
 
     window.createAnotherDeck = function () {
@@ -259,4 +264,16 @@ $(document).ready(function () {
 
 function toBase64(string) {
     return btoa(unescape(encodeURIComponent(string)));
+}
+
+function showToast(message) {
+    const toast = document.getElementById('toast');
+    toast.textContent = message;
+    toast.classList.remove('hidden');
+    toast.classList.add('show');
+    
+    setTimeout(() => {
+        toast.classList.remove('show');
+        toast.classList.add('hidden');
+    }, 2000);
 }
