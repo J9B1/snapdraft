@@ -37,7 +37,7 @@ $(document).ready(function () {
                 break;
             case 'all-cards':
             default:
-                validSources = []; 
+                validSources = [];
                 break;
         }
 
@@ -56,12 +56,12 @@ $(document).ready(function () {
         if (cardsData.length < 3) {
             console.error('Not enough cards available in the selected pool.');
             alert('Not enough cards available in the selected pool. Please select a different pool.');
-            resetDeck(); 
+            resetDeck();
             return;
         }
 
         resetDeck();
-        getThreeRandomCards(); 
+        getThreeRandomCards();
     }
 
     function getThreeRandomCards() {
@@ -94,9 +94,9 @@ $(document).ready(function () {
             $('#card3-art').attr('src', displayedCards[2].art);
     
             $('#card1-desc').html(displayedCards[0].ability || displayedCards[0].flavor);
-            $('#card2-desc').html(displayedCards[1].ability || displayedCards[0].flavor);
-            $('#card3-desc').html(displayedCards[2].ability || displayedCards[0].flavor);
-
+            $('#card2-desc').html(displayedCards[1].ability || displayedCards[1].flavor);
+            $('#card3-desc').html(displayedCards[2].ability || displayedCards[2].flavor);
+    
             $('#replace-btn1').prop('disabled', false);
             $('#replace-btn2').prop('disabled', false);
             $('#replace-btn3').prop('disabled', false);
@@ -115,7 +115,11 @@ $(document).ready(function () {
 
         const placeholderSrc = 'https://j9b1.github.io/snapdraft/data/img/blank_card.png';
         for (let i = 1; i <= 12; i++) {
-            $(`#card${i}`).attr('src', placeholderSrc).attr('alt', 'Placeholder').addClass('img-fluid');
+            $(`#card${i}`)
+                .attr('src', placeholderSrc)
+                .attr('alt', 'Placeholder')
+                .removeAttr('title')
+                .addClass('img-fluid');
         }
 
         $('#deck-name').val('');
@@ -181,7 +185,7 @@ $(document).ready(function () {
 
     function addCardToGrid(card) {
         $('.card-grid').html('');
-    
+
         deck.sort((a, b) => {
             if (a.cost !== b.cost) {
                 return a.cost - b.cost;
@@ -191,10 +195,10 @@ $(document).ready(function () {
             }
             return a.name.localeCompare(b.name);
         });
-    
+
         deck.forEach((card, index) => {
             if (index < 12) {
-                let titleText = (card.ability || card.flavor || "No description available.").replace(/<\/?span[^>]*>/g, '');
+                let titleText = (card.ability || card.flavor).replace(/<\/?span[^>]*>/g, '');
                 $(`#card${index + 1}`).attr({
                     src: card.art,
                     alt: card.name,
