@@ -109,7 +109,7 @@ $(document).ready(function () {
         $('#card-section').addClass('visible').removeClass('hidden');
         $('#card-pool').addClass('visible').removeClass('hidden');
 
-        const placeholderSrc = 'data/img/blank_card.png';
+        const placeholderSrc = 'https://j9b1.github.io/snapdraft/data/img/blank_card.png';
         for (let i = 1; i <= 12; i++) {
             $(`#card${i}`).attr('src', placeholderSrc).attr('alt', 'Placeholder').addClass('img-fluid');
         }
@@ -234,7 +234,7 @@ $(document).ready(function () {
         filterCardsByPool($(this).val());
     });
 
-    $.getJSON('data/Cards.json')
+    $.getJSON('https://j9b1.github.io/snapdraft/data/Cards.json')
         .done(function (data) {
             initializeCardsData(data);
             getThreeRandomCards();
