@@ -181,17 +181,20 @@ $(document).ready(function () {
 
     function addCardToGrid(card) {
         $('.card-grid').html('');
-
+    
         deck.sort((a, b) => {
-            if (a.cost === b.cost) {
+            if (a.cost !== b.cost) {
+                return a.cost - b.cost;
+            }
+            if (a.power !== b.power) {
                 return a.power - b.power;
             }
-            return a.cost - b.cost;
+            return a.name.localeCompare(b.name);
         });
-
+    
         deck.forEach((card, index) => {
             if (index < 12) {
-                let titleText = card?.ability || card?.flavor || "No description available.";
+                let titleText = (card.ability || card.flavor || "No description available.").replace(/<\/?span[^>]*>/g, '');
                 $(`#card${index + 1}`).attr({
                     src: card.art,
                     alt: card.name,
