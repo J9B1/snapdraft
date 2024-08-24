@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    font-family: "Roboto", sans-serif !important;
+}
+
 body {
     margin: 0;
     background-image: url("https://raw.githubusercontent.com/J9B1/snapdraft/main/data/img/wallpaper.jpg");
@@ -69,9 +75,9 @@ button {
 }
 
 .large-card img {
-    width: 100%;
+    width: 50%;
     height: auto;
-    max-height: 300px;
+    max-height: 200px;
     object-fit: contain;
     cursor: pointer;
 }
@@ -178,4 +184,14 @@ button {
     .button-container .btn {
         width: 100%;
     }
+}
+
+.card-description {
+    margin: 10px 0;
+    font-size: 12px;
+    color: #fff;
+}
+
+.card-description span {
+    font-weight: bold;
 }

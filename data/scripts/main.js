@@ -92,6 +92,10 @@ $(document).ready(function () {
             $('#card1-art').attr('src', displayedCards[0].art);
             $('#card2-art').attr('src', displayedCards[1].art);
             $('#card3-art').attr('src', displayedCards[2].art);
+    
+            $('#card1-desc').html(displayedCards[0].ability || displayedCards[0].flavor);
+            $('#card2-desc').html(displayedCards[1].ability || displayedCards[0].flavor);
+            $('#card3-desc').html(displayedCards[2].ability || displayedCards[0].flavor);
 
             $('#replace-btn1').prop('disabled', false);
             $('#replace-btn2').prop('disabled', false);
