@@ -191,9 +191,11 @@ $(document).ready(function () {
 
         deck.forEach((card, index) => {
             if (index < 12) {
+                let titleText = card?.ability || card?.flavor || "No description available.";
                 $(`#card${index + 1}`).attr({
                     src: card.art,
-                    alt: card.name
+                    alt: card.name,
+                    title: titleText
                 });
             }
         });
