@@ -10,6 +10,7 @@
 
 body {
     margin: 0;
+    padding-bottom: 10px;
     background-image: url("https://raw.githubusercontent.com/J9B1/snapdraft/main/data/img/wallpaper.jpg");
     background-size: cover;
     background-position: center;
@@ -103,27 +104,18 @@ button {
     border: none;
 }
 
-@media (min-width: 769px) {
-    .card-item {
-        width: calc(16.66% - 10px);
-    }
-}
-
 .space {
     margin-top: 5px !important;
 }
 
 .card-container {
-    margin-top: 10px;
     display: grid;
-    grid-gap: 10px;
     grid-template-columns: repeat(3, 1fr);
 }
 
 @media (min-width: 992px) {
     .card-container {
         grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: repeat(2, auto);
     }
 }
 
@@ -138,7 +130,8 @@ button {
     padding-top: 10px;
     padding-left: 10px;
     padding-right: 10px;
-    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 #resetDeck {
@@ -149,8 +142,12 @@ button {
     display: flex;
     flex-direction: row;
     gap: 10px;
-    margin-top: 20px;
+    margin-top: 10px;
     width: 100%;
+}
+
+#deck-actions {
+    margin-top: 10px;
 }
 
 .button-container .btn {
@@ -214,4 +211,33 @@ button {
 .toast.hidden {
     opacity: 0;
     visibility: hidden;
+}
+
+.accordion-item {
+    background: none !important;
+}
+
+.accordion-collapse {
+    background: rgba(0,0,0,0.25);
+}
+
+.accordion-collapse {
+    padding-top: 10px;
+}
+
+#view-deck-header button {
+    color: white;
+    background: rgba(0,0,0,0.5);
+}
+
+.accordion-button {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.accordion-button:not(.collapsed) {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
 }

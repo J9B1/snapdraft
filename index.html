@@ -39,45 +39,28 @@
 
 <body>
     <div class="container">
-
         <div class="row justify-content-center">
-            <div class="col-md-12">
-                <div class="card-container">
-                    <img src="https://j9b1.github.io/snapdraft/data/img/blank_card.png" alt="Card 1" class="card-item"
-                        id="card1">
-                    <img src="https://j9b1.github.io/snapdraft/data/img/blank_card.png" alt="Card 2" class="card-item"
-                        id="card2">
-                    <img src="https://j9b1.github.io/snapdraft/data/img/blank_card.png" alt="Card 3" class="card-item"
-                        id="card3">
-                    <img src="https://j9b1.github.io/snapdraft/data/img/blank_card.png" alt="Card 4" class="card-item"
-                        id="card4">
-                    <img src="https://j9b1.github.io/snapdraft/data/img/blank_card.png" alt="Card 5" class="card-item"
-                        id="card5">
-                    <img src="https://j9b1.github.io/snapdraft/data/img/blank_card.png" alt="Card 6" class="card-item"
-                        id="card6">
-                    <img src="https://j9b1.github.io/snapdraft/data/img/blank_card.png" alt="Card 7" class="card-item"
-                        id="card7">
-                    <img src="https://j9b1.github.io/snapdraft/data/img/blank_card.png" alt="Card 8" class="card-item"
-                        id="card8">
-                    <img src="https://j9b1.github.io/snapdraft/data/img/blank_card.png" alt="Card 9" class="card-item"
-                        id="card9">
-                    <img src="https://j9b1.github.io/snapdraft/data/img/blank_card.png" alt="Card 10" class="card-item"
-                        id="card10">
-                    <img src="https://j9b1.github.io/snapdraft/data/img/blank_card.png" alt="Card 11" class="card-item"
-                        id="card11">
-                    <img src="https://j9b1.github.io/snapdraft/data/img/blank_card.png" alt="Card 12" class="card-item"
-                        id="card12">
-                </div>
-
-                <!-- POOL SELECTION-->
+            <div class="col-md-8">
                 <div id="card-section">
-                    <div class="dropdown-container">
-                        <select id="card-pool">
-                            <option value="all-cards">All Cards</option>
-                            <option value="pool-1">Pool 1</option>
-                            <option value="pool-2">Pool 2</option>
-                            <option value="pool-3">Pool 3</option>
-                        </select>
+
+                    <!-- POOL SELECTION-->
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="dropdown-container">
+                                <select id="card-pool">
+                                    <option value="all-cards">All Cards</option>
+                                    <option value="pool-1">Pool 1</option>
+                                    <option value="pool-2">Pool 2</option>
+                                    <option value="pool-3">Pool 3</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-4">
+                            <button class="btn btn-danger w-100" onclick="createAnotherDeck()">
+                                <i class="bi bi-arrow-clockwise"></i>
+                                Reset</button>
+                        </div>
                     </div>
 
                     <!-- RANDOM CARD SELECTION -->
@@ -106,19 +89,65 @@
                     <div class="row">
                         <div class="col-4">
                             <button class="btn btn-danger replace-btn text-center" id="replace-btn1"
-                                onclick="replaceCard(0)">Replace</button>
+                                onclick="replaceCard(0)"><i class="bi bi-trash"></i></button>
                         </div>
                         <div class="col-4">
                             <button class="btn btn-danger btn-block replace-btn text-center" id="replace-btn2"
-                                onclick="replaceCard(1)">Replace</button>
+                                onclick="replaceCard(1)"><i class="bi bi-trash"></i></button>
                         </div>
                         <div class="col-4">
                             <button class="btn btn-danger replace-btn text-center" id="replace-btn3"
-                                onclick="replaceCard(2)">Replace</button>
+                                onclick="replaceCard(2)"><i class="bi bi-trash"></i></button>
                         </div>
                     </div>
                 </div>
 
+            </div>
+        </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="accordion accordion-flush" id="view-deck">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="view-deck-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-view-deck" aria-expanded="false"
+                                aria-controls="flush-collapseOne">
+                                View Deck
+                            </button>
+                        </h2>
+                        <div id="flush-view-deck" class="accordion-collapse collapse show"
+                            aria-labelledby="flush-headingOne" data-bs-parent="#view-deck">
+                            <div class="card-container">
+                                <img src="https://j9b1.github.io/snapdraft/data/img/blank_card.png" alt="Card 1" class="card-item"
+                                    id="card1">
+                                <img src="https://j9b1.github.io/snapdraft/data/img/blank_card.png" alt="Card 2" class="card-item"
+                                    id="card2">
+                                <img src="https://j9b1.github.io/snapdraft/data/img/blank_card.png" alt="Card 3" class="card-item"
+                                    id="card3">
+                                <img src="https://j9b1.github.io/snapdraft/data/img/blank_card.png" alt="Card 4" class="card-item"
+                                    id="card4">
+                                <img src="https://j9b1.github.io/snapdraft/data/img/blank_card.png" alt="Card 5" class="card-item"
+                                    id="card5">
+                                <img src="https://j9b1.github.io/snapdraft/data/img/blank_card.png" alt="Card 6" class="card-item"
+                                    id="card6">
+                                <img src="https://j9b1.github.io/snapdraft/data/img/blank_card.png" alt="Card 7" class="card-item"
+                                    id="card7">
+                                <img src="https://j9b1.github.io/snapdraft/data/img/blank_card.png" alt="Card 8" class="card-item"
+                                    id="card8">
+                                <img src="https://j9b1.github.io/snapdraft/data/img/blank_card.png" alt="Card 9" class="card-item"
+                                    id="card9">
+                                <img src="https://j9b1.github.io/snapdraft/data/img/blank_card.png" alt="Card 10" class="card-item"
+                                    id="card10">
+                                <img src="https://j9b1.github.io/snapdraft/data/img/blank_card.png" alt="Card 11" class="card-item"
+                                    id="card11">
+                                <img src="https://j9b1.github.io/snapdraft/data/img/blank_card.png" alt="Card 12" class="card-item"
+                                    id="card12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
                 <!-- DECK CODE -->
                 <div id="deck-actions" class="hidden">
                     <input type="text" id="deck-name" readonly placeholder="Enter deck name" class="form-control mb-2">
@@ -131,10 +160,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="row footer">
-            <p>Created by J9B1 | Source Code is available on <a href="https://github.com/J9B1/snapdraft" target="_blank">Github <i class="bi bi-github"></i></a></p>
         </div>
     </div>
 
