@@ -41,17 +41,17 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div id="card-section">
 
+                <div id="card-section">
                     <!-- POOL SELECTION-->
                     <div class="row">
                         <div class="col-8">
                             <div class="dropdown-container">
                                 <select id="card-pool">
                                     <option value="all-cards">All Cards</option>
-                                    <option value="pool-1">Pool 1</option>
-                                    <option value="pool-2">Pool 2</option>
                                     <option value="pool-3">Pool 3</option>
+                                    <option value="pool-2">Pool 2</option>
+                                    <option value="pool-1">Pool 1</option>
                                 </select>
                             </div>
                         </div>
@@ -102,6 +102,18 @@
                     </div>
                 </div>
 
+                <!-- DECK CODE -->
+                <div id="deck-actions" class="hidden">
+                    <input type="text" id="deck-name" readonly placeholder="Enter deck name" class="form-control mb-2">
+                    <div class="button-container">
+                        <button class="btn btn-success" onclick="copyDeck()"><i class="bi bi-copy"></i>
+                            Copy Deck</button>
+                        <button class="btn btn-danger" onclick="createAnotherDeck()">
+                            <i class="bi bi-arrow-clockwise"></i>
+                            New Deck</button>
+                    </div>
+                </div>
+
             </div>
         </div>
         
@@ -113,7 +125,7 @@
                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#flush-view-deck" aria-expanded="false"
                                 aria-controls="flush-collapseOne">
-                                View Deck
+                                Toggle Deck
                             </button>
                         </h2>
                         <div id="flush-view-deck" class="accordion-collapse collapse show"
@@ -145,18 +157,6 @@
                                     id="card12">
                             </div>
                         </div>
-                    </div>
-                </div>
-                
-                <!-- DECK CODE -->
-                <div id="deck-actions" class="hidden">
-                    <input type="text" id="deck-name" readonly placeholder="Enter deck name" class="form-control mb-2">
-                    <div class="button-container">
-                        <button class="btn btn-success" onclick="copyDeck()"><i class="bi bi-copy"></i>
-                            Copy Deck</button>
-                        <button class="btn btn-danger" onclick="createAnotherDeck()">
-                            <i class="bi bi-arrow-clockwise"></i>
-                            New Deck</button>
                     </div>
                 </div>
             </div>
